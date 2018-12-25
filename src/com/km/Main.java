@@ -114,7 +114,7 @@ public class Main {
 
     private static class MethodStat {
 
-        private Long minTime = 0L;
+        private Long minTime = Long.MAX_VALUE;
         private Long maxTime = 0L;
         private Long timeSum = 0L;
         private Long count = 0L;
