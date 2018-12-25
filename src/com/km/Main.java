@@ -29,8 +29,12 @@ public class Main {
         if (args.length == 0) {
             out.println("File not passed as an argument. Nothing to calculate.");
         }
-        String filePath = args[0];
+        analyze(args[0]);
 
+        out.println("\n\ntotal time: " + (System.nanoTime() - start) / 1000000 + "ms");
+    }
+
+    private static void analyze(String filePath) {
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             TreeMap<String, MethodStat> statMap = new TreeMap<>();
             TreeMap<String, String> entryTimeStamps = new TreeMap<>();
@@ -55,7 +59,6 @@ public class Main {
             err.println("Something went wrong!");
             e.printStackTrace();
         }
-        out.println("\n\ntotal time: " + (System.nanoTime() - start) / 1000000 + "ms");
     }
 
     private static MethodStat getUpdatedStat(Map<String, String> entryTimeStamps, Map<String, MethodStat> statMap,
