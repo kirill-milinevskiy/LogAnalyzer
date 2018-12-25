@@ -36,8 +36,8 @@ public class Main {
 
     private static void analyze(String filePath) {
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
-            TreeMap<String, MethodStat> statMap = new TreeMap<>();
-            TreeMap<String, String> entryTimeStamps = new TreeMap<>();
+            Map<String, MethodStat> statMap = new TreeMap<>();
+            Map<String, String> entryTimeStamps = new TreeMap<>();
 
             String line;
             while ((line = br.readLine()) != null) {
